@@ -4403,6 +4403,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-promise@^2.0.1:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-2.3.0.tgz#96edb9f2fdb01995822b263dd8aadab6748181bc"
+  integrity sha512-oyOjMhyKMLEjOOtvkwg0G4pAzLQ9WdbbeX7WdqKzvYXu+UFgD0Zo/Brq5Q49zNmnGPPzV5rmYvrr0jz1zWx8Iw==
+
 escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
@@ -4948,6 +4953,14 @@ firebase@^9.15.0:
     "@firebase/storage" "0.10.0"
     "@firebase/storage-compat" "0.2.0"
     "@firebase/util" "1.8.0"
+
+firebox@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/firebox/-/firebox-0.3.0.tgz#d349ffd7ad8bb557d8bef7daebb0f7954c1758be"
+  integrity sha512-aPVxXSit4g7keT3Hq0LxhnBAw9wpYMl6LaRJD5/buXpD56NO0XNRNmfgeIQnmqRlPvsNtvO4y5Vimlr7maj9Nw==
+  dependencies:
+    es6-promise "^2.0.1"
+    winreg "0.0.12"
 
 flat-cache@^3.0.4:
   version "3.0.4"
@@ -9606,6 +9619,11 @@ which@^2.0.1:
   integrity sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   dependencies:
     isexe "^2.0.0"
+
+winreg@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/winreg/-/winreg-0.0.12.tgz#07105554ba1a9d08979251d129475bffae3006b7"
+  integrity sha512-typ/+JRmi7RqP1NanzFULK36vczznSNN8kWVA9vIqXyv8GhghUlwhGp1Xj3Nms1FsPcNnsQrJOR10N58/nQ9hQ==
 
 word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"

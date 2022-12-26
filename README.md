@@ -7,3 +7,10 @@ This is the final porject of redux course
 - Redux toolkit
 - RTK Query
 - Firebase
+- Authentication
+
+
+Get me here:
+<br>
+<a href="https://razuahmedjoy.com">razuahmedjoy.com</a>
+
