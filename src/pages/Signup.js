@@ -3,7 +3,7 @@ import loginImage from "../assets/login.svg";
 import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createUser } from "../features/auth/authSlice";
+import { createUser, googleLogin } from "../features/auth/authSlice";
 const Signup = () => {
   const { handleSubmit, register, reset, control } = useForm();
   const password = useWatch({ control, name: "password" });
@@ -27,9 +27,13 @@ const Signup = () => {
     }
   }, [password, confirmPassword]);
 
+
+  const handleGoogleLogin = () => {
+    dispatch(googleLogin())
+  }
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(createUser({email:data.email,password:data.password}))
+    dispatch(createUser({ email: data.email, password: data.password }))
   };
 
   return (
@@ -95,6 +99,13 @@ const Signup = () => {
                   </span>
                 </p>
               </div>
+
+              <button
+                onClick={handleGoogleLogin}
+                className='font-bold text-white py-3 rounded-full bg-primary w-full'
+              >
+                Login with Google
+              </button>
             </div>
           </form>
         </div>
