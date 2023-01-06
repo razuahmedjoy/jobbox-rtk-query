@@ -51,7 +51,10 @@ const authSlice = createSlice({
             state.email = action.payload;
             state.isLoading = false;
 
-        }
+        },
+        toggleLoading:(state,action)=>{
+            state.isLoading = false
+        },
     },
 
     extraReducers:(builder)=>{
@@ -60,7 +63,7 @@ const authSlice = createSlice({
         })
         builder.addCase(createUser.fulfilled,(state,action)=>{
             state.isLoading = false;
-            state.email = action.payload.user.email;
+            state.email = action.payload;
             state.isError = false;
             state.error = "";
         })
@@ -76,7 +79,7 @@ const authSlice = createSlice({
         })
         builder.addCase(loginUser.fulfilled,(state,action)=>{
             state.isLoading = false;
-            state.email = action.payload.email;
+            state.email = action.payload;
             state.isError = false;
             state.error = "";
         })
@@ -92,7 +95,7 @@ const authSlice = createSlice({
         })
         builder.addCase(googleLogin.fulfilled,(state,action)=>{
             state.isLoading = false;
-            state.email = action.payload.email;
+            state.email = action.payload;
             state.isError = false;
             state.error = "";
         })
@@ -107,5 +110,5 @@ const authSlice = createSlice({
 });
 
 
-export const {logoutUser,setUser} = authSlice.actions;
+export const {logoutUser,setUser,toggleLoading} = authSlice.actions;
 export default authSlice.reducer;

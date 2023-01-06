@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import loginImage from "../assets/login.svg";
 import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createUser, googleLogin } from "../features/auth/authSlice";
 const Signup = () => {
   const { handleSubmit, register, reset, control } = useForm();
@@ -11,6 +11,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
 
+  const {isError,error} = useSelector(state=>state.auth)
   const dispatch = useDispatch();
 
   useEffect(() => {

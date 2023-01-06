@@ -10,14 +10,14 @@ const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const { email, isLoading } = useSelector(state => state.auth);
+  const { email, isLoading, isError, error } = useSelector(state => state.auth);
 
   const onSubmit = (data) => {
     console.log(data);
     dispatch(loginUser({ email: data.email, password: data.password }));
   };
 
-  const handleGoogleLogin = ()=>{
+  const handleGoogleLogin = () => {
     dispatch(googleLogin())
   }
 
@@ -35,6 +35,8 @@ const Login = () => {
       <div className='w-1/2 grid place-items-center'>
         <div className='bg-[#FFFAF4] rounded-lg grid place-items-center p-10'>
           <h1 className='mb-10 font-medium text-2xl'>Login</h1>
+
+
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='space-y-3'>
               <div className='flex flex-col items-start'>
@@ -53,7 +55,11 @@ const Login = () => {
                   {...register("password")}
                 />
               </div>
+
               <div className='relative !mt-8'>
+                {
+                  isError && <p className='text-red-500 text-sm my-5'>{error}</p>
+                }
                 <button
                   type='submit'
                   className='font-bold text-white py-3 rounded-full bg-primary w-full'
