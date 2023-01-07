@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../assets/login.svg";
 import { googleLogin, loginUser } from "../features/auth/authSlice";
 const Login = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-
+  const location = useLocation()
+  console.log("location  ",location)
   const dispatch = useDispatch();
-  const { email, isLoading, isError, error } = useSelector(state => state.auth);
+  const { user:{email,role}, isLoading, isError, error } = useSelector(state => state.auth);
 
   const onSubmit = (data) => {
     console.log(data);
